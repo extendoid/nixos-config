@@ -8,6 +8,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowBroken = true;
+  nixpkgs.config.allowUnfree = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -60,6 +61,7 @@
     protonvpn-gui
     monero-gui
     chromium
+    gnumake
   ];
 
   programs.gnupg.agent = {
