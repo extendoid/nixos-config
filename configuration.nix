@@ -5,6 +5,7 @@
     [
     ./utils
     ./users
+    ./laptop/xserver
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -26,10 +27,7 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-  services.xserver.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
-
-  services.xserver.xkb.layout = "fr";
+  extendoid.xserver.plasma6.enable = true;
 
   services.pipewire = {
     enable = true;
