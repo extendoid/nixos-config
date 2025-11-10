@@ -4,6 +4,7 @@
   imports =
     [
     ./utils
+    ./users
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -37,13 +38,7 @@
 
   services.libinput.enable = true;
 
-  users.users.extendoid = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    packages = with pkgs; [
-      tree
-    ];
-  };
+  nixosUsers.extendoid = true;
 
   programs.firefox.enable = true;
   programs.chromium.enable = true;
