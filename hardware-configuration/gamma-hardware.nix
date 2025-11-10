@@ -1,8 +1,9 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, pkgs, modulesPath, inputs, ... }:
 
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
+      "${inputs.nixos-hardware}/common/cpu/intel/comet-lake"
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];

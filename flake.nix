@@ -14,10 +14,10 @@
     in {
       nixosConfigurations.gamma = nixpkgs.lib.nixosSystem {
         inherit system;
+	specialArgs = { inherit inputs; };
 	modules = [
 	  ./configuration.nix
 	  ./hardware-configuration/gamma-hardware.nix
-	  nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1
 	];
     };
   };
