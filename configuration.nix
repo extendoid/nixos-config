@@ -8,12 +8,9 @@
     ./laptop/xserver
     ./laptop/networking
     ./laptop/utils
+    ./nix-related
     ./boot
     ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowBroken = true;
-  nixpkgs.config.allowUnfree = true;
 
   extendoid.xserver.plasma6.enable = true;
   nixosUsers.extendoid = true;
