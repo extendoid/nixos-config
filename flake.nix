@@ -16,7 +16,7 @@
         inherit system;
 	modules = [
 	  ./configuration.nix
-	  ./hardware-configuration.nix
+	  ./hardware-configuration/gamma-hardware.nix
 	  nixos-hardware.nixosModules.lenovo-thinkpad-t14-intel-gen1
 	];
     };
