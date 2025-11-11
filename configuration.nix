@@ -10,10 +10,12 @@
     ./laptop/utils
     ./nix-related
     ./boot
+    ./scripts
     ];
 
   extendoid.xserver.plasma6.enable = true;
   nixosUsers.extendoid = true;
+  extendoid.scripts.enable = true;
 
   programs.git.enable = true;
 
