@@ -5,4 +5,7 @@
     ./ledger.nix
     ./fingerprint.nix
   ];
+
+  # BIOS Update
+  services.fwupd.enable = true;
 }
