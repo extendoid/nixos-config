@@ -9,9 +9,14 @@
   services.tor = {
     enable = true;
     client.enable = true;
+    openFirewall = true;
+    relay = {
+      enable = true;
+      role = "relay";
+    };
   };
   
-  environment.systemPackages = [ pkgs.tor ];
+  environment.systemPackages = [ pkgs.tor-browser ];
 
   services.openssh.enable = true;
 }
