@@ -8,7 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: 
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }@inputs: 
     let
       system = "x86_64-linux"; 
     in {
@@ -19,6 +19,11 @@
 	  ./configuration.nix
 	  ./hardware-configuration/gamma-hardware.nix
 	];
+      };
+
+      homeConfigurations."extendoid" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+	modules = [ ./home/extendoid/home.nix ];
+      };
     };
-  };
 }
